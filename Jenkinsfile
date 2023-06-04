@@ -1,7 +1,10 @@
 pipeline {
     agent any
-    environment{
-        DOCKERHUB_CREDS = credentials('dockerhub1')
+    options {
+     buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub_carlosizquierdo')
     }
     stages {
         stage('Clone Repo') {

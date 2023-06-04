@@ -4,7 +4,7 @@ pipeline {
      buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub_carlosizquierdo')
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub1')
     }
     stages {
         stage('Clone Repo') {
